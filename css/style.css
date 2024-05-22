@@ -16,6 +16,7 @@
 body {
     display: flex;
     justify-content: center;
+    margin-top: 2px;
 }
 
 .main-container {
@@ -113,4 +114,55 @@ body {
 
 .popular-cards .card-rating {
     margin-bottom: 5px;
+}
+/* adding styles  */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0%;
+    padding-bottom: 2%;
+
+}
+
+.logo-container {
+    width: 100px;
+    padding-top: 9px;
+}
+
+/* Resize Images */
+.logo-container img {
+    width: 100%;
+    height: auto;
+}
+
+
+.navbar-links{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0%;
+    
+}
+
+.navbar-links div:hover {
+    width: auto;
+    border-top: 3px solid rgb(	0, 101, 252);
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-icon {
+    background-color: #f0f0f0;
+    padding: 0.5em;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

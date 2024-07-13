@@ -243,29 +243,33 @@ input[type="text"] {
 
 
 .filter-container {
-    display: flex;
-    justify-content: row;
-    align-items: center;
-    
+    display: flex; 
+    gap: 50px;
 }
 
-.filter-container h4 {
-    padding-right: 0%;
+.filter-container-buttons {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, auto);
 }
 
-.filter-container ul {
-    width: 50%;
-    display: flex;
-    margin-left: 0%;
-    /* justify-content: space-evenly; */
-    justify-content: space-between;
 
-}
+/* .filter-container-buttons div:nth-child(1) {
+    background-color: #00BFB8;
+  }
 
-.filter-container li {
-    list-style-type: none;
-    margin-left: 0%;
-}
+.filter-container-buttons div:nth-child(2) {
+    background-color: #8E007E;
+  }
+ 
+.filter-container-buttons div:nth-child(3) {
+    background-color: #23D0EA;
+  }
+
+.filter-container-buttons div:nth-child(4) {
+    background-color: #EF8956;
+}  */
+
 
 
 .filter-icon {
@@ -284,6 +288,10 @@ input[type="text"] {
     margin-left: 0%;
     font-size: 16px;
     font-weight: bold;
+}
+
+.filter-button:hover { 
+    background-color: #a5c6f8;
 }
 
 
@@ -329,7 +337,7 @@ input[type="text"] {
 
 .accommodation-card {
     background-color: rgb(247, 243, 243);
-     width: calc(100% / 3 - (20px * 2 / 3));
+     width: calc(100% / 3 - (10px * 2 / 3));
     border-radius: 20px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
@@ -392,13 +400,14 @@ input[type="text"] {
 
 .section-activities{
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
 .activity-card {
     background-color: #fff;
     border-radius: 15px;
-    flex-basis: 25%;
+    flex-basis: calc(100% / 3 - (2rem * 2 / 3));
     padding: 0%;
     text-decoration: none;
     color: #000;
@@ -603,7 +612,7 @@ input[type="text"] {
 
   /* phone screen  */
 
-  @media (width <= 450px){
+  @media (width <= 768px){
     .navbar{
         display: flex;
         flex-direction: column;

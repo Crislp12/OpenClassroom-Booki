@@ -123,21 +123,22 @@ body {
 }
 
 .logo-container {
-    width: 100px;
     padding-top: 22px;
 }
 
 .logo-container img {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
 .navbar-links{
-    width: 300px;
     display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+    width: 50%;
+    padding-left: 0px;
+    list-style: none;
+    margin: 0px;
 }
+
 .acommedation{
     text-decoration: none;
     color: black;
@@ -149,11 +150,16 @@ body {
     color: black;
 }
 
+.navbar-links li {
+    flex-basis: 50%;
+}
 
-.navbar-links a{
+.navbar-links a {
+    display: block;
     text-decoration: none;
     color: #000;
     border-top: 3px solid white;
+    text-align: center;
     padding-top: 15px;
 }
 
@@ -539,12 +545,25 @@ input[type="text"] {
     .navbar-links{
       width: 100%;
       border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      /* border-image: linear-gradient(to right, #000 50%, transparent 50%) 100% 1; */
     }
 
-    .navbar-links li{
-        margin-right: 8%;
-        margin-bottom: 4%;
+    .navbar-links a {
+        border-bottom: 3px solid #f6f7f9;
     }
+
+    .navbar-links a.active {
+        border-top: 3px solid white;
+        color: black;
+    }
+
+    .navbar-links a:hover {
+    border-top: 3px solid white;  
+    border-bottom: 3px solid #0065FC;
+    color: #0065FC;
+    } 
+
+   
 
     .logo-container  {
         margin-bottom: 4%;
@@ -599,21 +618,16 @@ input[type="text"] {
 
     .filter-container-buttons {
         margin: 0% auto;
+        width: 100%;
         display: grid;
-        grid-gap: 22px;
+        grid-gap: 18px;
         grid-template-columns: repeat(2, auto);
     }
-
-    .filter-icon {
-        height: 22PX;
-        margin-right: 13PX;
-        fill: #0065FC;
-    }
-    
     .filter-button {
         background-color: WHITE;
         border: 2px solid #D9D9D9;
         margin-bottom: 6%;
+        width: 100%;
     }
 
     .accommodation-and-popular section {
@@ -699,5 +713,29 @@ input[type="text"] {
         margin-bottom: 0%;
         box-sizing: border-box;
     }
+
+
+    @media (550px <= width <= 768px )  {
+
+    .filter-icon {
+        height: 22PX;
+        margin-left: 20%;
+        margin-right: 10%;
+        fill: #0065FC;
+     }
+
+    }
+
+
+    @media (width <= 550px )  {
+
+        .filter-icon {
+            height: 22PX;
+            margin-left: 6%;
+            margin-right: 9%;
+            fill: #0065FC;
+         }
+         
+        }
 
   }

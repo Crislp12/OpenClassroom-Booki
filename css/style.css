@@ -39,6 +39,7 @@ body {
 
 .card img {
     object-fit: cover;
+    width: 30%;
 }
 
 .card-title {
@@ -89,7 +90,7 @@ body {
 }
 
 .popular-cards img {
-    width: 33%;
+    width: 88px;
     height: 136px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -133,8 +134,8 @@ body {
 
 .navbar-links{
     display: flex;
-    width: 50%;
-    padding-left: 0px;
+    width: 30%;
+    padding: 0px;
     list-style: none;
     margin: 0px;
 }
@@ -182,8 +183,7 @@ body {
     border-radius: 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 38%;
-    min-width: 30%;
+    width: 30%;
     margin-bottom: 3%;
 
 }
@@ -209,6 +209,8 @@ input[type="text"] {
     outline: none;
     padding: 16px;
     font-size: 19px;
+    color: #000;
+    font-weight: bolder;
     flex-grow: 1;
 }
 
@@ -216,7 +218,7 @@ input[type="text"] {
     background-color:  #0065FC;
     border: none;
     color: #F2F2F2;
-    padding: 16px 18px;
+    padding: 16px 15px;
     border-top-left-radius: 0px;
     font-size: 20px;
     flex-shrink: 0; 
@@ -246,36 +248,36 @@ input[type="text"] {
 
 
 .filter-container {
-    display: flex; 
-    gap: 50px;
+    width: 60%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: .3fr auto auto auto auto;
     margin-bottom: 1%;
 }
 
-.filter-container-buttons {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(4, auto);
+.filter-container h3{
+    grid-column: 5px;
+    gap: 0px;
 }
 
 
-
 .filter-icon {
-    height: 20PX;
-    margin-right: 10PX;
+    height: 23PX;
+    margin-right: 13px;
     fill: #0065FC;
 }
 
 .filter-button {
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: WHITE;
-    justify-content: row;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
-    padding: 16PX;
-    margin-left: 0%;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: bold; 
 }
+
 
 .filter-button:hover { 
     background-color: #a5c6f8;
@@ -421,7 +423,7 @@ input[type="text"] {
 .footer-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #D9D9D9;
+  background-color:  #F2F2F2;
 }
 
 .footer-links{
@@ -462,11 +464,25 @@ input[type="text"] {
 
 @media (width <= 1000px)  {
 
-    .filter-container {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
+    .navbar-links {
+        width: 50%;
     }
+
+    .filter-container {
+        width: 100%;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr); /* we want 50% columns */
+      }
+
+    .filter-container h3 {
+        grid-column: 1 / -1;
+    }
+
+    .filter-button {
+       padding: 16px 10px;
+    }
+
 
     .search-container {
         min-width: 50%;
@@ -533,6 +549,14 @@ input[type="text"] {
   /* phone screen  */
 
   @media (width <= 768px){
+    body {
+        margin: 0%;
+    }
+    
+    .logo-container img{
+        width: 70px;
+        height: auto;
+    }
 
     .navbar{
         margin-top: 0%;
@@ -550,10 +574,12 @@ input[type="text"] {
 
     .navbar-links a {
         border-bottom: 3px solid #f6f7f9;
+        padding-bottom: 20px;
     }
 
     .navbar-links a.active {
         border-top: 3px solid white;
+        border-bottom: 3px solid #0065FC;
         color: black;
     }
 
@@ -563,7 +589,6 @@ input[type="text"] {
     color: #0065FC;
     } 
 
-   
 
     .logo-container  {
         margin-bottom: 4%;
@@ -576,10 +601,8 @@ input[type="text"] {
     }
 
     .search-container { 
-        width: 85%;
-        margin-bottom: 2%;
-        /* margin: 0% auto; */
-        margin-left: 2%;
+        width: 94%;
+        margin: 5px auto;
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;
         border-top-left-radius: 12px;
@@ -609,31 +632,42 @@ input[type="text"] {
     }
 
     .filter-container {
-        margin-bottom: 2%;
+        width: 94%;
+        margin: 0px auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); /* we want 50% columns */
     }
 
     .filter-container h3 {
-        margin-left: 3%;
+        margin-left: 1%;
     }
 
-    .filter-container-buttons {
-        margin: 0% auto;
-        width: 100%;
-        display: grid;
-        grid-gap: 18px;
-        grid-template-columns: repeat(2, auto);
+      .filter-button {
+       margin-left: 0%;
+       padding-left: 0px;
     }
-    .filter-button {
-        background-color: WHITE;
-        border: 2px solid #D9D9D9;
-        margin-bottom: 6%;
-        width: 100%;
+
+    .filter-icon {
+        height: 23PX;
+        margin-right: 13px;
+        margin-left: 0%;
+        fill: #0065FC;
+    }
+
+    .info-container{
+        padding: 3%;
+        margin-bottom: 1%;
     }
 
     .accommodation-and-popular section {
-        background-color: WHITE; 
-        border-radius: 20px; 
+        background-color: #F2F2F2; 
+        border-radius: 0%; 
         padding: 10px;
+    }
+
+    #acommedations{
+        background-color:  white; 
     }
 
     .popular-title{
@@ -648,7 +682,7 @@ input[type="text"] {
     }
 
     .card{
-        width: 100%;
+        width: 98%;
         margin-top: 4px;
     }
 
@@ -668,12 +702,17 @@ input[type="text"] {
     }
 
     .accommodation-and-popular {
+        padding: 1%;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr / 1fr ;
         grid-template-areas: 
         "b"
         "a"
+    }
+
+    .section-title{
+        margin-left: 1%;
     }
 
     .acommedations{
@@ -686,10 +725,14 @@ input[type="text"] {
 
     .section-activities{
         display: grid;
-        padding: 3%;
+        padding: 4%;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
         gap: 12px
+    }
+
+    .section-activities-container h2 {
+        margin-left: 4%;
     }
 
     .activity-card {
@@ -697,15 +740,27 @@ input[type="text"] {
         padding: 0%;
         margin-bottom: 6%;
     }
+
+    .card-image img {
+        height: 150px;
+        object-fit: cover;
+    }
  
-    
     .card-content{
         padding: 6%;
     }
     
     .footer-container{
         grid-template-columns: 1fr;
+        padding: 1%;
     } 
+
+    .footer-tittle{
+        margin-left: 3%;
+    }
+    .footer-list {
+        padding-left: 3%;
+    }
 
     .main-container {
         width: 100%;
@@ -713,29 +768,5 @@ input[type="text"] {
         margin-bottom: 0%;
         box-sizing: border-box;
     }
-
-
-    @media (550px <= width <= 768px )  {
-
-    .filter-icon {
-        height: 22PX;
-        margin-left: 20%;
-        margin-right: 10%;
-        fill: #0065FC;
-     }
-
-    }
-
-
-    @media (width <= 550px )  {
-
-        .filter-icon {
-            height: 22PX;
-            margin-left: 6%;
-            margin-right: 9%;
-            fill: #0065FC;
-         }
-         
-        }
 
   }
